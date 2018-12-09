@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/JorgenVatle/windows-highlight-for-desktop/issues"
   },
-  "homepage": "https://github.com/JorgenVatle/windows-highlight-for-desktop#readme"
+  "homepage": "https://github.com/JorgenVatle/windows-highlight-for-desktop#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/node": "^10.12.12"
+  }
 }
