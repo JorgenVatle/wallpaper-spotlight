@@ -20,4 +20,16 @@ export default class Spotlight {
     public images() {
         return this.api.get('/photos');
     }
+
+    /**
+     * Fetch a random wallpaper.
+     */
+    public get wallpaper() {
+        return this.api.get('/photos/random', {
+            data: {
+                orientation: 'landscape',
+                query: 'wallpaper'
+            }
+        })
+    }
 }
