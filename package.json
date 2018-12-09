@@ -1,31 +1,67 @@
 {
   "name": "windows-highlight-for-desktop",
+  "description": "Random high quality wallpapers daily - Inspired by Windows 10's lock-screen highlight.",
   "version": "1.0.0",
-  "description": "",
+  "author": "jorgen@wcaservices.net",
+  "bin": {
+    "spotlight": "./bin/run"
+  },
+  "bugs": {
+    "url": "https://github.com/JorgenVatle/windows-highlight-for-desktop/issues"
+  },
+  "dependencies": {
+    "@oclif/command": "^1.5.6",
+    "@oclif/config": "^1.9.0",
+    "@oclif/plugin-help": "^2.1.4",
+    "axios": "^0.18.0",
+    "config": "^3.0.0",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.19.5",
+    "@types/axios": "^0.14.0",
+    "@types/chai": "^4.1.7",
+    "@types/config": "0.0.34",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.12",
+    "cross-env": "^5.2.0",
+    "globby": "^8.0.1",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/JorgenVatle/windows-highlight-for-desktop#readme",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "UNLICENSED",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "spotlight",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JorgenVatle/windows-highlight-for-desktop.git"
   },
-  "author": "jorgen@wcaservices.net",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/JorgenVatle/windows-highlight-for-desktop/issues"
+  "scripts": {
+    "build": "tsc",
+    "postpack": "rimraf oclif.manifest.json",
+    "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
   },
-  "homepage": "https://github.com/JorgenVatle/windows-highlight-for-desktop#readme",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "config": "^3.0.0",
-    "typescript": "^3.2.2"
-  },
-  "devDependencies": {
-    "@types/axios": "^0.14.0",
-    "@types/config": "0.0.34",
-    "@types/node": "^10.12.12",
-    "cross-env": "^5.2.0"
-  }
+  "types": "lib/index.d.ts"
 }

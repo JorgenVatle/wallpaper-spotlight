@@ -1,4 +1,11 @@
-node_modules
-dist
-config/development.json
+*-debug.log
+*-error.log
 .idea
+/.nyc_output
+/dist
+/lib
+/tmp
+/yarn.lock
+config/development.json
+dist
+node_modules
