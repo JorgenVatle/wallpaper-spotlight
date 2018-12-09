@@ -4,7 +4,7 @@ export default class Spotlight {
 
     protected api: AxiosInstance;
 
-    constructor() {
+    public constructor() {
         this.api = Axios.create({
             baseURL: 'https://api.unsplash.com/'
         });
