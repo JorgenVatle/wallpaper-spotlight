@@ -1,4 +1,5 @@
 import Axios, { AxiosInstance } from 'axios';
+import Config from 'config';
 
 export default class Spotlight {
 
@@ -6,7 +7,10 @@ export default class Spotlight {
 
     public constructor() {
         this.api = Axios.create({
-            baseURL: 'https://api.unsplash.com/'
+            baseURL: 'https://api.unsplash.com/',
+            headers: {
+                Authorization: Config.get('unsplash.access')
+            }
         });
     }
 
