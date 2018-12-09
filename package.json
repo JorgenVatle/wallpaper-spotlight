@@ -1,0 +1,19 @@
+{
+  "name": "windows-highlight-for-desktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgenVatle/windows-highlight-for-desktop.git"
+  },
+  "author": "jorgen@wcaservices.net",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/JorgenVatle/windows-highlight-for-desktop/issues"
+  },
+  "homepage": "https://github.com/JorgenVatle/windows-highlight-for-desktop#readme"
+}
