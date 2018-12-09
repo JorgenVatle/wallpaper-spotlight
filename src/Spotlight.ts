@@ -9,7 +9,7 @@ export default class Spotlight {
         this.api = Axios.create({
             baseURL: 'https://api.unsplash.com/',
             headers: {
-                Authorization: Config.get('unsplash.access')
+                Authorization: `Client-ID ${Config.get('unsplash.access')}`
             }
         });
     }
