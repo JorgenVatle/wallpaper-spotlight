@@ -19,6 +19,7 @@
   "homepage": "https://github.com/JorgenVatle/windows-highlight-for-desktop#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "config": "^3.0.0",
     "typescript": "^3.2.2"
   },
   "devDependencies": {
