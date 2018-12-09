@@ -10,4 +10,10 @@ export default class Spotlight {
         });
     }
 
+    /**
+     * Fetch images
+     */
+    public images() {
+        return this.api.get('/images');
+    }
 }
