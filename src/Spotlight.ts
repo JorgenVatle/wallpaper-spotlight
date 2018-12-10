@@ -1,5 +1,5 @@
 import Axios, { AxiosInstance } from 'axios';
-import Config from 'config';
+import * as Config from 'config';
 
 export default class Spotlight {
 
