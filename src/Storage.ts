@@ -1,6 +1,7 @@
 import * as OperatingSystem from 'os';
 import * as Path from 'path';
 import * as Filesystem from 'fs';
+import { Stream } from 'stream';
 
 export default new class Storage {
 
@@ -35,6 +36,15 @@ export default new class Storage {
         Filesystem.writeFile(this.path(file.name), file.blob, 'binary', (err: any) => {
             if (err) console.log({ err });
         });
+    }
+
+    /**
+     * Store a file stream.
+     *
+     * @param file
+     */
+    public storeStream(file: { name: string, stream: Stream }) {
+        return file.stream.pipe(Filesystem.createWriteStream(this.path(file.name)));
     }
 
 }
