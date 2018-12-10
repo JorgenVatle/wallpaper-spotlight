@@ -33,7 +33,7 @@ export default class Image {
     async store() {
         const { headers, data } = await this.streamRequest;
 
-        await Storage.storeStream({
+        return await Storage.storeStream({
             name: `${this.image.id}.${Mime.getExtension(headers['content-type'])}`,
             stream: data,
         });
