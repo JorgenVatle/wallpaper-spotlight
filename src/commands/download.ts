@@ -3,7 +3,7 @@ import * as Notifier from 'node-notifier';
 import CLI from 'cli-ux';
 import Wallpapers from '../Wallpapers';
 
-export default class Get extends Command {
+export default class Download extends Command {
 
     /**
      * Command description
