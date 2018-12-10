@@ -31,7 +31,7 @@ export default new class Wallpapers {
     /**
      * Fetch share key from collection API.
      */
-    protected get shareKey() {
+    protected get shareKey(): Promise<string> {
         return new Promise(async (resolve, reject) => {
             if (this.cache.share_key) {
                 return this.cache.share_key;
