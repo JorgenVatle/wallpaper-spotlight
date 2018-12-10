@@ -1,5 +1,6 @@
 import { Command } from '@oclif/command';
 import CLI from 'cli-ux';
+import Opn from 'opn';
 import * as Notifier from 'node-notifier';
 import Wallpapers from '../Wallpapers';
 
@@ -22,12 +23,14 @@ export default class Wallpaper extends Command {
         await wallpaper.setAsWallpaper();
         CLI.action.stop(wallpaper.image.description || undefined);
 
-        Notifier.notify({
+        const notification = Notifier.notify({
             title: `Photograph by ${wallpaper.image.user.name}`,
             message: 'You can view their portfolio on Unsplash!',
 
             // @ts-ignore
             timeout: 20,
-        })
+        });
+
+        notification.on('click', () => Opn(wallpaper.portfolio))
     }
 }
