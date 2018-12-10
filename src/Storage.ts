@@ -32,7 +32,7 @@ export default new class Storage {
      *
      * @param file
      */
-    public storeStream(file: { name: string, stream: Stream }) {
+    public storeStream(file: { name: string, stream: Stream }): Promise<string> {
         const path = this.path(file.name);
         file.stream.pipe(Filesystem.createWriteStream(path));
 
