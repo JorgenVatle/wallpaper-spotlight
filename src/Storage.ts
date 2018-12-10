@@ -7,13 +7,14 @@ export default new class Storage {
     /**
      * Storage path.
      */
-    protected storagePath: string;
+    protected get storagePath() {
+        const path = Path.join(OperatingSystem.homedir(), 'desktop-spotlight');
 
-    /**
-     * Storage constructor.
-     */
-    public constructor() {
-        this.storagePath = Path.join(OperatingSystem.homedir(), 'desktop-spotlight');
+        if (!Filesystem.existsSync(path)) {
+            Filesystem.mkdirSync(path);
+        }
+
+        return path;
     }
 
     /**
