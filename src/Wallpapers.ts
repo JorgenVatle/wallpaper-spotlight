@@ -1,4 +1,5 @@
 import Axios, { AxiosInstance } from 'axios';
+import Helpers from './Helpers';
 
 export default new class Wallpapers {
 
@@ -45,12 +46,12 @@ export default new class Wallpapers {
         const imageRequest = await this.api.get('/photos', {
             params: {
                 order_by: 'latest',
-                page: 40,
+                page: Helpers.random(1, 100),
                 per_page: 10,
                 share_key: await this.shareKey,
             }
         });
 
-        return imageRequest.data[0]
+        return Helpers.sample(imageRequest.data);
     }
 }
