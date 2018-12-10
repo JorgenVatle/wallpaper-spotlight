@@ -1,5 +1,6 @@
 import Axios, { AxiosInstance } from 'axios';
 import * as Config from 'config';
+import Storage from './Storage';
 
 interface UnsplashImage {
     id: string,
@@ -57,7 +58,7 @@ export default new class Spotlight {
             responseType: 'buffer',
         });
 
-        new Storage().store({
+        Storage.store({
             name: image.id,
             buffer: request.data,
         });
