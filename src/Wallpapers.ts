@@ -49,7 +49,7 @@ export default new class Wallpapers {
      * @param page
      */
     public async fetch(page = 1) {
-        return await this.api.get('/photos', {
+        const imageRequest = await this.api.get('/photos', {
             params: {
                 share_key: await this.shareKey,
                 order_by: 'latest',
@@ -57,14 +57,16 @@ export default new class Wallpapers {
                 page,
             }
         });
+
+        return imageRequest.data.map((imageData: UnsplashImageData) => {
+            return new Image(imageData);
+        })
     }
 
     /**
      * Fetch single image.
      */
     public async single(): Promise<Image> {
-        const imageRequest = await this.fetch();
-
-        return new Image(Helpers.sample(imageRequest.data));
+        return Helpers.sample(await this.fetch());
     }
 }
