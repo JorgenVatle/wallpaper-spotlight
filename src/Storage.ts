@@ -42,4 +42,14 @@ export default new class Storage {
         });
     }
 
+    /**
+     * Shorten the given path.
+     *
+     * @param absolutePath
+     */
+    shortenPath(absolutePath: string) {
+        return absolutePath.replace(OperatingSystem.homedir(), '~')
+            .replace(/\\/g, '/');
+    }
+
 }
