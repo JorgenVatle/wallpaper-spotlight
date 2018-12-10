@@ -27,7 +27,7 @@ export default class Download extends Command {
         const message = `You can find this image in ${savePath}`;
 
         this.log('\n' + title);
-        this.log(wallpaper.image.user.portfolio_url || wallpaper.image.user.links.html);
+        this.log(wallpaper.portfolio);
         this.log('\n' + message);
 
         // @ts-ignore
