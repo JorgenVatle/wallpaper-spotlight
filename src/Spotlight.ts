@@ -1,6 +1,14 @@
 import Axios, { AxiosInstance } from 'axios';
 import * as Config from 'config';
 
+interface UnsplashImage {
+    id: string,
+    urls: {
+        raw: string,
+        full: string,
+    },
+}
+
 export default class Spotlight {
 
     /**
@@ -37,5 +45,21 @@ export default class Spotlight {
                 query: 'wallpaper'
             }
         })
+    }
+
+    /**
+     * Store Unsplash image.
+     *
+     * @param image
+     */
+    public async storeImage(image: UnsplashImage) {
+        const request = await Axios.get(image.urls.raw, {
+            responseType: 'buffer',
+        });
+
+        new Storage().store({
+            name: image.id,
+            buffer: request.data,
+        });
     }
 }
