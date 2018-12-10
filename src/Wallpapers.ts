@@ -64,9 +64,29 @@ export default new class Wallpapers {
     }
 
     /**
+     * Filter images to landscape mode.
+     *
+     * @param images
+     */
+    protected filterLandscape(images: Array<Image>) {
+        return images.filter(({ isLandscape }: Image) => isLandscape);
+    }
+
+    /**
      * Fetch single image.
      */
-    public async single(): Promise<Image> {
-        return Helpers.sample(await this.fetch());
+    public async single(landscapeOnly = true): Promise<Image> {
+        let page = 1;
+        let images = await this.fetch(page);
+
+        if (landscapeOnly) {
+            images = this.filterLandscape(images);
+        }
+
+        while (landscapeOnly && !images.length) {
+            images = this.filterLandscape(await images(page += 1));
+        }
+
+        return Helpers.sample(images);
     }
 }
