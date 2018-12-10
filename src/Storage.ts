@@ -23,7 +23,7 @@ export default new class Storage {
      * @param file
      */
     public store(file: { name: string, buffer: Buffer }) {
-        Filesystem.writeFile(Path.join(this.storagePath, file.name), file.buffer, (err: any) => {
+        Filesystem.writeFile(Path.join(this.storagePath, file.name), file.buffer, 'binary', (err: any) => {
             if (err) console.log({ err });
         });
     }
