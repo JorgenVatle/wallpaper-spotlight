@@ -1,6 +1,6 @@
-import OperatingSystem from 'os';
-import Path from 'path';
-import Filesystem from 'fs';
+import * as OperatingSystem from 'os';
+import * as Path from 'path';
+import * as Filesystem from 'fs';
 
 export default new class Storage {
 
