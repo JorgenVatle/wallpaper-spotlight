@@ -44,7 +44,12 @@ export default new class Storage {
      * @param file
      */
     public storeStream(file: { name: string, stream: Stream }) {
-        return file.stream.pipe(Filesystem.createWriteStream(this.path(file.name)));
+        file.stream.pipe(Filesystem.createWriteStream(this.path(file.name)));
+
+        return new Promise((resolve, reject) => {
+            file.stream.on('end', resolve);
+            file.stream.on('error', reject);
+        });
     }
 
 }
