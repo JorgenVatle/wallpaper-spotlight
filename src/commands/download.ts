@@ -22,12 +22,14 @@ export default class Download extends Command {
         await wallpaper.store();
         CLI.action.stop(wallpaper.image.description || undefined);
 
-        Notifier.notify({
-            title: `Downloaded photo from ${wallpaper.image.user.name}`,
-            message: `You can find this image in ~/desktop-spotlight`,
+        const title = `Downloaded photo by ${wallpaper.image.user.name}`;
+        const message = `You can find this image in ~/desktop-spotlight/${wallpaper.image.id}.jpeg`;
 
-            // @ts-ignore
-            timeout: 15,
-        })
+        this.log('\n' + title);
+        this.log(wallpaper.image.user.portfolio_url || wallpaper.image.user.links.html);
+        this.log('\n' + message);
+
+        // @ts-ignore
+        Notifier.notify({ title, message, timeout: 15, });
     }
 }
