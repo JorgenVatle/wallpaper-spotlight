@@ -42,7 +42,7 @@ export default new class Spotlight {
      */
     public get wallpaper() {
         return this.api.get('/photos/random', {
-            data: {
+            params: {
                 orientation: 'landscape',
                 collections: '1065976'
             }
