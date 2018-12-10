@@ -1,6 +1,6 @@
 {
-  "name": "windows-highlight-for-desktop",
-  "description": "Random high quality wallpapers daily - Inspired by Windows 10's lock-screen highlight.",
+  "name": "wallpaper-spotlight",
+  "description": "Random high quality wallpapers, accessible through the command line - Inspired by Windows 10's lock-screen highlight.",
   "version": "1.0.0",
   "author": "jorgen@wcaservices.net",
   "bin": {
