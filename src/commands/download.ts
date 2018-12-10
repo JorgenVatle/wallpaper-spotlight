@@ -2,6 +2,7 @@ import { Command } from '@oclif/command';
 import * as Notifier from 'node-notifier';
 import CLI from 'cli-ux';
 import Wallpapers from '../Wallpapers';
+import Storage from '../Storage';
 
 export default class Download extends Command {
 
@@ -19,11 +20,11 @@ export default class Download extends Command {
         CLI.action.stop();
 
         CLI.action.start('Downloading wallpaper');
-        await wallpaper.store();
+        const savePath = Storage.shortenPath(await wallpaper.store());
         CLI.action.stop(wallpaper.image.description || undefined);
 
         const title = `Downloaded photo by ${wallpaper.image.user.name}`;
-        const message = `You can find this image in ~/desktop-spotlight/${wallpaper.image.id}.jpeg`;
+        const message = `You can find this image in ${savePath}`;
 
         this.log('\n' + title);
         this.log(wallpaper.image.user.portfolio_url || wallpaper.image.user.links.html);
