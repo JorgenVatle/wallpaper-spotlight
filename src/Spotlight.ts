@@ -3,8 +3,14 @@ import Config from 'config';
 
 export default class Spotlight {
 
+    /**
+     * REST API Axios instance.
+     */
     protected api: AxiosInstance;
 
+    /**
+     * Spotlight constructor
+     */
     public constructor() {
         this.api = Axios.create({
             baseURL: 'https://api.unsplash.com/',
