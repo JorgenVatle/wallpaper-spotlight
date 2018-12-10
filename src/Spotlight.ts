@@ -59,7 +59,7 @@ export default new class Spotlight {
             responseType: 'stream',
         });
 
-        Storage.storeStream({
+        await Storage.storeStream({
             name: `${image.id}.${Mime.getExtension(request.headers['content-type'])}`,
             stream: request.data,
         });
