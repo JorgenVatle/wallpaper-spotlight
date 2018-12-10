@@ -44,17 +44,26 @@ export default new class Wallpapers {
     }
 
     /**
+     * Fetch images from the given page.
+     *
+     * @param page
+     */
+    public async fetch(page = 1) {
+        return await this.api.get('/photos', {
+            params: {
+                share_key: await this.shareKey,
+                order_by: 'latest',
+                per_page: 10,
+                page,
+            }
+        });
+    }
+
+    /**
      * Fetch single image.
      */
     public async single(): Promise<Image> {
-        const imageRequest = await this.api.get('/photos', {
-            params: {
-                order_by: 'latest',
-                page: Helpers.random(1, 100),
-                per_page: 10,
-                share_key: await this.shareKey,
-            }
-        });
+        const imageRequest = await this.fetch();
 
         return new Image(Helpers.sample(imageRequest.data));
     }
