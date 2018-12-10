@@ -1,3 +1,5 @@
+const packageJson = require('../package.json');
+
 export default new class Helpers {
 
     /**
@@ -16,5 +18,12 @@ export default new class Helpers {
      */
     sample(array: Array<any>) {
         return array[this.random(1, array.length) - 1];
+    }
+
+    /**
+     * Package User-Agent.
+     */
+    userAgent() {
+        return `${packageJson.name} v${packageJson.version} [${packageJson.homepage}]`
     }
 }
