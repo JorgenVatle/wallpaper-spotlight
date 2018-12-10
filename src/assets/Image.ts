@@ -36,6 +36,13 @@ export default class Image {
     }
 
     /**
+     * Photographer portfolio URL
+     */
+    get portfolio() {
+        return this.image.user.portfolio_url || this.image.user.links.html;
+    }
+
+    /**
      * Store current image.
      */
     async store() {
