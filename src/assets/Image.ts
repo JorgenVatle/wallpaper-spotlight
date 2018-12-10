@@ -7,7 +7,7 @@ export default class Image {
     /**
      * Image
      */
-    protected image: UnsplashImageData;
+    public readonly image: UnsplashImageData;
 
     /**
      * Image constructor.
