@@ -23,7 +23,7 @@ export default new class Helpers {
     /**
      * Package User-Agent.
      */
-    userAgent() {
+    get userAgent() {
         return `${packageJson.name} v${packageJson.version} [${packageJson.homepage}]`
     }
 }
