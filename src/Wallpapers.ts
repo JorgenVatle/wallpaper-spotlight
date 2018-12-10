@@ -38,4 +38,19 @@ export default class Wallpapers {
         });
     }
 
+    /**
+     * Fetch single image.
+     */
+    public async single() {
+        const imageRequest = await this.api.get('/', {
+            params: {
+                order_by: 'latest',
+                page: 40,
+                per_page: 10,
+                share_key: await this.shareKey,
+            }
+        });
+
+        return imageRequest.data[0]
+    }
 }
