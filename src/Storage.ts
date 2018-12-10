@@ -21,8 +21,8 @@ export default class Storage {
      *
      * @param file
      */
-    public store(file: { name: string, blob: Blob }) {
-        Filesystem.writeFile(Path.join(this.storagePath, file.name), file.blob, (err: any) => {
+    public store(file: { name: string, buffer: Buffer }) {
+        Filesystem.writeFile(Path.join(this.storagePath, file.name), file.buffer, (err: any) => {
             if (err) console.log({ err });
         });
     }
