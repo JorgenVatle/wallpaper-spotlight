@@ -1,5 +1,6 @@
 import Axios, { AxiosInstance } from 'axios';
 import Helpers from './Helpers';
+import Image from './assets/Image';
 
 export default new class Wallpapers {
 
@@ -45,7 +46,7 @@ export default new class Wallpapers {
     /**
      * Fetch single image.
      */
-    public async single() {
+    public async single(): Promise<Image> {
         const imageRequest = await this.api.get('/photos', {
             params: {
                 order_by: 'latest',
@@ -55,6 +56,6 @@ export default new class Wallpapers {
             }
         });
 
-        return Helpers.sample(imageRequest.data);
+        return new Image(Helpers.sample(imageRequest.data));
     }
 }
