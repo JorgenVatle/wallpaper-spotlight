@@ -1,6 +1,7 @@
 import Axios from 'axios';
-import Storage from '../Storage';
 import * as Mime from 'mime';
+import Wallpaper from 'wallpaper';
+import Storage from '../Storage';
 
 export default class Image {
 
@@ -28,6 +29,13 @@ export default class Image {
     }
 
     /**
+     * Whether or not the current image is in landscape mode.
+     */
+    get isLandscape() {
+        return this.image.height < this.image.width;
+    }
+
+    /**
      * Store current image.
      */
     async store() {
@@ -40,10 +48,11 @@ export default class Image {
     }
 
     /**
-     * Whether or not the current image is in landscape mode.
+     * Set the current image as a wallpaper.
      */
-    get isLandscape() {
-        return this.image.height < this.image.width;
+    async setAsWallpaper() {
+        const imagePath = await this.store();
+        await Wallpaper.set(imagePath);
     }
 
 }
