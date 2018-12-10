@@ -76,7 +76,7 @@ export default new class Wallpapers {
      * Fetch single image.
      */
     public async single(landscapeOnly = true): Promise<Image> {
-        let page = 1;
+        let page = Helpers.random(1, 80);
         let images = await this.fetch(page);
 
         if (landscapeOnly) {
