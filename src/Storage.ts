@@ -18,6 +18,15 @@ export default new class Storage {
     }
 
     /**
+     * Build file path to the given destination.
+     *
+     * @param to
+     */
+    protected path(to: string) {
+        return Path.join(this.storagePath, to);
+    }
+
+    /**
      * Store file.
      *
      * @param file
