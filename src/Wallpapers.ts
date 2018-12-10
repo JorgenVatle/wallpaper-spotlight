@@ -42,7 +42,7 @@ export default new class Wallpapers {
      * Fetch single image.
      */
     public async single() {
-        const imageRequest = await this.api.get('/', {
+        const imageRequest = await this.api.get('/photos', {
             params: {
                 order_by: 'latest',
                 page: 40,
