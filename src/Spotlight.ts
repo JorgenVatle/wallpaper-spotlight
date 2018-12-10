@@ -9,7 +9,7 @@ interface UnsplashImage {
     },
 }
 
-export default class Spotlight {
+export default new class Spotlight {
 
     /**
      * REST API Axios instance.

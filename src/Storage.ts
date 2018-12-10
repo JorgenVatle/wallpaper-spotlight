@@ -2,7 +2,7 @@ import OperatingSystem from 'os';
 import Path from 'path';
 import Filesystem from 'fs';
 
-export default class Storage {
+export default new class Storage {
 
     /**
      * Storage path.
