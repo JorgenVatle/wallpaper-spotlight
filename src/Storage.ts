@@ -23,7 +23,7 @@ export default new class Storage {
      *
      * @param to
      */
-    protected path(to: string) {
+    public path(to: string) {
         return Path.join(this.storagePath, to);
     }
 
