@@ -17,6 +17,7 @@
     "cli-ux": "^4.9.3",
     "mime": "^2.4.0",
     "node-notifier": "^5.3.0",
+    "opn": "^5.4.0",
     "tslib": "^1.9.3",
     "wallpaper": "^4.1.0"
   },
@@ -29,6 +30,7 @@
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.12",
     "@types/node-notifier": "0.0.28",
+    "@types/opn": "^5.1.0",
     "@types/wallpaper": "^2.5.0",
     "cross-env": "^5.2.0",
     "globby": "^8.0.1",
