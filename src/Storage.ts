@@ -32,7 +32,7 @@ export default new class Storage {
      * @param file
      */
     public store(file: { name: string, blob: Blob }) {
-        Filesystem.writeFile(Path.join(this.storagePath, file.name), file.blob, 'binary', (err: any) => {
+        Filesystem.writeFile(this.path(file.name), file.blob, 'binary', (err: any) => {
             if (err) console.log({ err });
         });
     }
