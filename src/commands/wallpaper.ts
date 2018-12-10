@@ -25,6 +25,9 @@ export default class Wallpaper extends Command {
         Notifier.notify({
             title: `Photograph by ${wallpaper.image.user.name}`,
             message: 'You can view their portfolio on Unsplash!',
+
+            // @ts-ignore
+            timeout: 20,
         })
     }
 }
