@@ -28,17 +28,6 @@ export default new class Storage {
     }
 
     /**
-     * Store file.
-     *
-     * @param file
-     */
-    public store(file: { name: string, blob: Blob }) {
-        Filesystem.writeFile(this.path(file.name), file.blob, 'binary', (err: any) => {
-            if (err) console.log({ err });
-        });
-    }
-
-    /**
      * Store a file stream.
      *
      * @param file
