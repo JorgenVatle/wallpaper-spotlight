@@ -27,6 +27,7 @@
     "@types/mime": "^2.0.0",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.12",
+    "@types/wallpaper": "^2.5.0",
     "config": "^3.0.0",
     "cross-env": "^5.2.0",
     "globby": "^8.0.1",
