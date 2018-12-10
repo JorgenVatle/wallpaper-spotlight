@@ -21,6 +21,9 @@ export default new class Wallpapers {
     public constructor() {
         this.api = Axios.create({
             baseURL: 'https://unsplash.com/napi/collections/1065976',
+            headers: {
+                'User-Agent': Helpers.userAgent,
+            }
         });
     }
 
