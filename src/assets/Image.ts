@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import * as Mime from 'mime';
-import Wallpaper from 'wallpaper';
+import * as Wallpaper from 'wallpaper';
 import Storage from '../Storage';
 
 export default class Image {
