@@ -44,7 +44,7 @@ export default new class Spotlight {
         return this.api.get('/photos/random', {
             data: {
                 orientation: 'landscape',
-                query: 'wallpaper'
+                collections: '1065976'
             }
         })
     }
