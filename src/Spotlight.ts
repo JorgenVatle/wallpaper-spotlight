@@ -1,5 +1,6 @@
 import Axios, { AxiosInstance } from 'axios';
 import * as Config from 'config';
+import * as Mime from 'mime';
 import Storage from './Storage';
 
 interface UnsplashImage {
@@ -59,7 +60,7 @@ export default new class Spotlight {
         });
 
         Storage.store({
-            name: image.id,
+            name: `${image.id}.${Mime.getExtension(request.headers['content-type'])}`,
             blob: request.data,
         });
     }
