@@ -3,12 +3,6 @@ windows-highlight-for-desktop
 
 Random high quality wallpapers daily - Inspired by Windows 10&#39;s lock-screen highlight.
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/windows-highlight-for-desktop.svg)](https://npmjs.org/package/windows-highlight-for-desktop)
-[![CircleCI](https://circleci.com/gh/[object Object]/tree/master.svg?style=shield)](https://circleci.com/gh/[object Object]/tree/master)
-[![Downloads/week](https://img.shields.io/npm/dw/windows-highlight-for-desktop.svg)](https://npmjs.org/package/windows-highlight-for-desktop)
-[![License](https://img.shields.io/npm/l/windows-highlight-for-desktop.svg)](https://github.com/[object Object]/blob/master/package.json)
-
 <!-- toc -->
 * [Usage](#usage)
 * [Commands](#commands)
