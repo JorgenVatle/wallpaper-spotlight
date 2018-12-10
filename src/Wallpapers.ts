@@ -1,6 +1,6 @@
 import Axios, { AxiosInstance } from 'axios';
 
-export default class Wallpapers {
+export default new class Wallpapers {
 
     /**
      * Axios REST instance
