@@ -39,4 +39,11 @@ export default class Image {
         });
     }
 
+    /**
+     * Whether or not the current image is in landscape mode.
+     */
+    get isLandscape() {
+        return this.image.height < this.image.width;
+    }
+
 }
