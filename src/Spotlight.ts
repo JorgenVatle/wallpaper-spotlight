@@ -56,12 +56,12 @@ export default new class Spotlight {
      */
     public async storeImage(image: UnsplashImage) {
         const request = await Axios.get(image.urls.full, {
-            responseType: 'blob',
+            responseType: 'stream',
         });
 
-        Storage.store({
+        Storage.storeStream({
             name: `${image.id}.${Mime.getExtension(request.headers['content-type'])}`,
-            blob: request.data,
+            stream: request.data,
         });
     }
 }
