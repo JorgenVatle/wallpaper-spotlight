@@ -16,11 +16,11 @@ Random high quality wallpapers daily - Inspired by Windows 10&#39;s lock-screen 
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g windows-highlight-for-desktop
+$ npm install -g wallpaper-spotlight
 $ spotlight COMMAND
 running command...
 $ spotlight (-v|--version|version)
-windows-highlight-for-desktop/1.0.0 win32-x64 node-v10.1.0
+wallpaper-spotlight/1.0.0 win32-x64 node-v10.1.0
 $ spotlight --help [COMMAND]
 USAGE
   $ spotlight COMMAND
@@ -29,28 +29,20 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`spotlight hello [FILE]`](#spotlight-hello-file)
+* [`spotlight download`](#spotlight-download)
 * [`spotlight help [COMMAND]`](#spotlight-help-command)
+* [`spotlight wallpaper`](#spotlight-wallpaper)
 
-## `spotlight hello [FILE]`
+## `spotlight download`
 
-describe the command here
+Fetch a random wallpaper
 
 ```
 USAGE
-  $ spotlight hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ spotlight hello
-  hello world from ./src/hello.ts!
+  $ spotlight download
 ```
 
-_See code: [src\commands\hello.ts](https://github.com/JorgenVatle/windows-highlight-for-desktop/blob/v1.0.0/src\commands\hello.ts)_
+_See code: [src\commands\download.ts](https://github.com/JorgenVatle/windows-highlight-for-desktop/blob/v1.0.0/src\commands\download.ts)_
 
 ## `spotlight help [COMMAND]`
 
@@ -68,4 +60,15 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src\commands\help.ts)_
+
+## `spotlight wallpaper`
+
+Set a random image as the desktop wallpaper.
+
+```
+USAGE
+  $ spotlight wallpaper
+```
+
+_See code: [src\commands\wallpaper.ts](https://github.com/JorgenVatle/windows-highlight-for-desktop/blob/v1.0.0/src\commands\wallpaper.ts)_
 <!-- commandsstop -->
