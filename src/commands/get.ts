@@ -12,8 +12,7 @@ export default class Get extends Command {
      * Fetch wallpaper.
      */
     async run() {
-        const wallpaper = await new Spotlight().wallpaper;
-
-        return wallpaper.data;
+        const wallpaper = await Spotlight.wallpaper;
+        await Spotlight.storeImage(wallpaper.data);
     }
 }
