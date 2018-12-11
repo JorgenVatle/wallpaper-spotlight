@@ -1,4 +1,4 @@
-windows-highlight-for-desktop
+Wallpaper Spotlight
 =============================
 
 Random high quality wallpapers daily - Inspired by Windows 10&#39;s lock-screen highlight.
