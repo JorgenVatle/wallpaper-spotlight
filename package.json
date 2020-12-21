@@ -16,7 +16,7 @@
     "axios": "^0.18.0",
     "cli-ux": "^4.9.3",
     "mime": "^2.4.0",
-    "node-notifier": "^5.3.0",
+    "node-notifier": "^8.0.1",
     "opn": "^5.4.0",
     "tslib": "^1.9.3",
     "wallpaper": "^4.1.0"
